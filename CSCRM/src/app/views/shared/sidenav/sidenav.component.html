@@ -1,1 +1,8 @@
-<p>sidenav works!</p>
+<img class="img-fluid imgSize" src="../../../assets/img/portfolioLogo.png" alt="CodeStack Logo">
+
+<div *ngFor="let a of adminPages">
+    <!-- <i class="{{a.linkIcon}}"></i> -->
+    <p class="pointer text-left pl-3" routerLink = "{{a.routerLink}}" routerLinkActive="{{a.routerLinkActive}}">
+        {{a.linkText}}
+    </p>
+</div>
