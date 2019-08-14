@@ -1,1 +1,59 @@
-<p>users works!</p>
+<div>
+    <div class="card vSpace border-0 labelColor">
+        <div class="card-body py-0">
+            <dl class="row my-0">
+                <dt class="col-3">
+                    <select class="form-control selectWidth">
+                            <option>All Students</option>
+                            <option>Alumni</option>
+                            <option>Current</option>
+                            <option>Probation</option>
+                            <option>Terminated</option>
+                    </select>
+                </dt>
+                
+                <dt class="col-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control filterWidth inputColor" placeholder="Filter Name">
+                        <div class="input-group-append">
+                            <span class="input-group-text filterColor"><i class="fas fa-filter"></i></span>
+                        </div>
+                    </div>
+                </dt>
+
+                <dt class="col addBtn">
+                    <button class="btn btnColor">Add Student</button>
+                </dt>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <div class="card vSpace border-0 labelColor">
+        <div class="card-body py-0">
+            <dl class="row my-0">
+                <dt class="col-3">Name</dt>
+                <dt class="col-3">Status</dt>
+                <dt class="col-3">Email</dt>
+                <dt class="col-3">Permissions</dt>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+<div *ngFor="let s of students">
+    <div class="card vSpace infoColor">
+        <div class="card-body py-0">
+            <dl class="row my-0">
+                <dd class="col-3">{{s.fullName}}</dd>
+                <dd class="col-3">{{s.status}}</dd>
+                <dd class="col-3">{{s.email}}</dd>
+                <dd class="col-3">{{s.permissions}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
