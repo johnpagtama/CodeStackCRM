@@ -1,6 +1,11 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+import { faUniversity } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,7 +14,12 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class SidenavComponent implements OnInit {
 
-    faCoffee = faCoffee;
+    faTachometerAlt = faTachometerAlt;
+    faUser = faUser;
+    faUserGraduate = faUserGraduate;
+    faCalendarCheck = faCalendarCheck;
+    faUniversity = faUniversity;
+    faSignOutAlt = faSignOutAlt;
 
     @Output() currentRoute = new EventEmitter();
 
@@ -19,41 +29,41 @@ export class SidenavComponent implements OnInit {
             routerLink: 'dashboard',
             routerLinkActive: 'activeLink',
             linkText: 'Dashboard',
-            linkIcon: this.faCoffee
+            linkIcon: this.faTachometerAlt
         },
 
         {
             routerLink: 'users',
             routerLinkActive: 'activeLink',
             linkText: 'Users',
-            linkIcon: this.faCoffee
+            linkIcon: this.faUser
         },
 
         {
             routerLink: 'students',
             routerLinkActive: 'activeLink',
             linkText: 'Students',
-            linkIcon: this.faCoffee
+            linkIcon: this.faUserGraduate
         },
 
         {
             routerLink: 'events',
             routerLinkActive: 'activeLink',
             linkText: 'Events',
-            linkIcon: this.faCoffee
+            linkIcon: this.faCalendarCheck
         },
 
         {
             routerLink: 'academy',
             routerLinkActive: 'activeLink',
             linkText: 'Academy',
-            linkIcon: this.faCoffee
+            linkIcon: this.faUniversity
         },
 
         {
             routerLink: 'login',
             linkText: 'Logout',
-            linkIcon: this.faCoffee
+            linkIcon: this.faSignOutAlt
         }
     ];
 
@@ -63,19 +73,19 @@ export class SidenavComponent implements OnInit {
             routerLink: 'studentInfo',
             routerLinkActive: 'activeLink',
             linkText: 'Student Information',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faUserGraduate
         },
 
         {
             routerLink: 'instructorInfo',
             routerLinkActive: 'activeLink',
             linkText: 'Instructor Information',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faUser
         },
 
         {
             linkText: 'Logout',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faSignOutAlt
         }
     ];
 
@@ -83,6 +93,7 @@ export class SidenavComponent implements OnInit {
 
     ngOnInit() {
         console.log(this.route);
+
         console.log(this.route['_routerState'].snapshot.url);
     }
 
