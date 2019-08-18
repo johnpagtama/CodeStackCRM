@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,47 +9,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+    faCoffee = faCoffee;
+
+    @Output() currentRoute = new EventEmitter();
+
     public adminPages =
     [
         {
             routerLink: 'dashboard',
             routerLinkActive: 'activeLink',
             linkText: 'Dashboard',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faCoffee
         },
 
         {
             routerLink: 'users',
             routerLinkActive: 'activeLink',
             linkText: 'Users',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faCoffee
         },
 
         {
             routerLink: 'students',
             routerLinkActive: 'activeLink',
             linkText: 'Students',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faCoffee
         },
 
         {
             routerLink: 'events',
             routerLinkActive: 'activeLink',
             linkText: 'Events',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faCoffee
         },
 
         {
             routerLink: 'academy',
             routerLinkActive: 'activeLink',
             linkText: 'Academy',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faCoffee
         },
 
         {
             routerLink: 'login',
             linkText: 'Logout',
-            linkIcon: 'fas fa-right-arrow'
+            linkIcon: this.faCoffee
         }
     ];
 
@@ -73,9 +79,11 @@ export class SidenavComponent implements OnInit {
         }
     ];
 
-    constructor() { }
+    constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
+        console.log(this.route);
+        console.log(this.route['_routerState'].snapshot.url);
     }
 
 }

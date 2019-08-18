@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { SidenavComponent } from './views/shared/sidenav/sidenav.component';
 import { LoginComponent } from './views/shared/login/login.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
@@ -13,6 +15,8 @@ import { EventsComponent } from './views/admin/events/events.component';
 import { AcademyComponent } from './views/admin/academy/academy.component';
 import { StudentInfoComponent } from './views/student/student-info/student-info.component';
 import { InstructorInfoComponent } from './views/student/instructor-info/instructor-info.component';
+import { AddEventModalComponent } from './views/shared/add-event-modal/add-event-modal.component';
+import { EventInfoComponent } from './views/admin/event-info/event-info.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +29,14 @@ import { InstructorInfoComponent } from './views/student/instructor-info/instruc
     EventsComponent,
     AcademyComponent,
     StudentInfoComponent,
-    InstructorInfoComponent
+    InstructorInfoComponent,
+    AddEventModalComponent,
+    EventInfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

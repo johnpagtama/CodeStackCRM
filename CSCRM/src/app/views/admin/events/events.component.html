@@ -1,1 +1,67 @@
-<p>events works!</p>
+<div>
+    <div class="card vSpace border-0 labelColor">
+        <div class="card-body py-0">
+            <dl class="row my-0">
+                <dt class="col-3">
+                    <select class="form-control selectWidth">
+                            <option>All Events</option>
+                            <option>Assessment</option>
+                            <option>Tour</option>
+                            <option>Workshop</option>
+                    </select>
+                </dt>
+                
+                <dt class="col-3">
+                    <select class="form-control selectWidth2">
+                        <!-- <option selected disabled hidden>{{currentMonth}}</option> -->
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+                </dt>
+
+                <dt class="col addBtn">
+                    <button type="button" class="btn btnColor" data-toggle="modal" data-target="#exampleModal">Add Event</button>
+                </dt>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div>
+    <div class="card vSpace border-0 labelColor">
+        <div class="card-body py-0">
+            <dl class="row my-0">
+                <dt class="col-3">Name</dt>
+                <dt class="col-3">School Year</dt>
+                <dt class="col-3">Status</dt>
+                <dt class="col-3">Email</dt>
+            </dl>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="col-6"> -->
+    <div *ngFor="let e of events" class="col-12" routerLink = "eventInfo" routerLinkActive="activeLink">
+        <div class="card vSpace infoColor">
+            <div class="card-body py-0">
+                <dl class="row my-0">
+                    <dd class="col-5"><h5>{{e.eventName}}</h5></dd>
+                    <dd class="col-5">{{e.startDate}} - {{e.endDate}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+

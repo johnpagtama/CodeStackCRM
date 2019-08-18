@@ -1,0 +1,89 @@
+select
+{
+    color: #1B74CC;
+    border: 1px solid#1B74CC;
+}
+
+option
+{
+    color: #1B74CC;
+}
+
+::placeholder 
+{ 
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #1B74CC;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder 
+{ 
+    /* Internet Explorer 10-11 */
+    color: #1B74CC;
+}
+
+::-ms-input-placeholder 
+{ 
+    /* Microsoft Edge */
+    color: #1B74CC;
+}
+
+.inputColor
+{
+    color: #1B74CC;
+    border: 1px solid#1B74CC;
+}
+
+.vSpace 
+{
+    margin: 1rem;
+}
+
+.labelColor
+{
+    color: #1B74CC;
+}
+
+.infoColor
+{
+    color: #003DA3;
+}
+
+.selectWidth
+{
+    max-width: 9rem;
+}
+
+.selectWidth2
+{
+    max-width: 7rem;
+}
+
+.filterWidth
+{
+    max-width: 9rem;
+}
+
+.btnColor
+{
+    background-color: #003DA3;
+    color: #fff;
+}
+
+.addBtn
+{
+    margin-left: 9rem;
+}
+
+.filterColor
+{
+    background-color: #1B74CC;
+    color: #fff;
+    border: #1B74CC;
+}
+
+.maxHeight 
+{
+    height: 100vh;
+}
+
