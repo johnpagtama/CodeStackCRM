@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div id="sidenav" class="col-md-2 height bgBlue fgWhite pl-3 px-0">
             <app-sidenav class="position"></app-sidenav>
@@ -8,4 +8,45 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-</div>
+</div> -->
+<main>
+  <mat-sidenav-container>
+    <mat-sidenav #drawer class="sidenav" [fixedInViewport]="(isHandset$ | async)"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)" mode="side" opened role="region">
+      
+        <img alt="Logo" src='../../../assets/img/logo.png' style='width: 5rem;'>
+        
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    
+    <mat-sidenav-content role="region" class="content-region">
+      <mat-toolbar class="header">
+        <button type="button" aria-label="Toggle side menu" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side menu toggle icon">menu</mat-icon>
+        </button>
+        <!-- <img alt="Logo" src='../assets/img/logo.png' style='width: 3rem;'> -->
+        
+        <span class="flex"></span>
+
+      </mat-toolbar>
+      <mat-toolbar [ngClass]="(isHandset$ | async) ? 'content-title-mobile' : 'content-title'">
+        <div class="display-2 text-center">
+            <span>{{title}}</span>
+        </div>
+        
+      </mat-toolbar>
+
+      <div class="component-content" fxLayout="column">
+        <router-outlet></router-outlet>
+      </div>
+
+      <mat-toolbar class="footer">
+        <span class="copyright">&copy; Copyright CodeStack Academy Class 2019</span>
+      </mat-toolbar>
+
+    </mat-sidenav-content> 
+
+  </mat-sidenav-container>
+</main>

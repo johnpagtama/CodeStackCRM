@@ -1,24 +1,92 @@
-.height
-{
-    min-height: 100vh;
+.height {
+  min-height: 100vh;
 }
 
-.bgBlue
-{
-    background-color: #1B74CC;
+.bgBlue {
+  background-color: #1b74cc;
 }
 
-.bgWhite
-{
-    background-color: #ffffff;
+.bgWhite {
+  background-color: #ffffff;
 }
 
-.fgWhite
-{
-    color: #ffffff;
+.fgWhite {
+  color: #ffffff;
 }
 
-.position
-{
-    position: fixed;
+.position {
+  position: fixed;
 }
+
+// ###############################################
+// Added by FCruz
+.content-title {
+  margin-top: 64px;
+}
+
+.header, .content-title {
+    background: #ffffff !important;
+    color: #1b74cc !important;
+}
+
+.header-logo {
+  width: 5rem;
+  margin: 15px 0 0 18px;
+}
+
+.content-title-mobile {
+  margin-top: 56px;
+}
+
+.sidenav {
+  width: 200px;
+  position: fixed;
+}
+
+.mat-sidenav-container > .sidenav{
+    background: #1b74cc !important;
+}
+.sidenav .mat-toolbar {
+  background: #1b74cc !important;
+}
+
+.mat-toolbar.mat-primary {
+  top: 0;
+  z-index: 1;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 999999 !important;
+}
+
+.header > app-main-nav {
+  z-index: 99999989 !important;
+  position: fixed !important;
+  right: 0;
+}
+
+.component-content {
+  margin: 2em;
+  min-height: -webkit-fill-available;
+}
+
+.mat-drawer-container {
+    background-color: #ffffff !important;
+}
+
+.footer {
+  font-weight: 100;
+  background: #1b74cc !important;
+  box-sizing: border-box;
+  padding: 35px 30px 30px 30px;
+  .copyright {
+    font-weight: bold;
+  }
+  fa {
+    margin-left: 20px;
+  }
+}
+
+// ##################################################
