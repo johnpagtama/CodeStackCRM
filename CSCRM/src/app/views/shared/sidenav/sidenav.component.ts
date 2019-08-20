@@ -93,7 +93,7 @@ export class SidenavComponent implements OnInit {
 
     ngOnInit() {
         console.log(this.route);
-
+        // tslint:disable-next-line: no-string-literal
         console.log(this.route['_routerState'].snapshot.url);
     }
 

@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MaterialModule } from './material/material.module';
 
 import { SidenavComponent } from './views/shared/sidenav/sidenav.component';
 import { LoginComponent } from './views/shared/login/login.component';
@@ -36,7 +41,13 @@ import { EventInfoComponent } from './views/admin/event-info/event-info.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
