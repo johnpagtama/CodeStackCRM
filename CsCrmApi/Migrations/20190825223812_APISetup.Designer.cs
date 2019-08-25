@@ -4,14 +4,16 @@ using CsCrmApi.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CsCrmApi.Migrations
 {
     [DbContext(typeof(CsCrmDbContext))]
-    partial class CsCrmDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190825223812_APISetup")]
+    partial class APISetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CsCrmApi.Entities;
+using CsCrmApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CsCrmApi.Controllers
@@ -10,11 +12,35 @@ namespace CsCrmApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        // private DatabaseService db;
+        private UserService userDb;
 
-        public UserController()
+        public UserController(UserService _userDb)
         {
-            // db = database;
+            userDb = _userDb;
+        }
+
+        [HttpGet]
+        public ActionResult<List<User>> GetUserList()
+        {
+            return userDb.GetUserList().ToList();
+        }
+
+        [HttpPut]
+        public ActionResult<User> UpdateUser([FromBody] User user)
+        {
+            return userDb.UpdateUser(user);
+        }
+
+        [HttpPatch]
+        public ActionResult<string> RemoveUser([FromQuery] int id)
+        {
+            return userDb.RemoveUser(id);
+        }
+
+        [HttpDelete]
+        public ActionResult<string> DeleteUser([FromQuery] int id)
+        {
+            return userDb.DeleteUser(id);
         }
     }
 }
