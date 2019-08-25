@@ -17,16 +17,7 @@ namespace CsCrmApi.Entities
         public string LastName { get; set; }
         [MaxLength (25)]
         public string Role { get; set; }
-        [MaxLength (20)]
-        public DateTime? BirthDate { get; set; }
-        [MaxLength (50)]
-        public string Address { get; set; }
-        [MaxLength (25)]
-        public string City { get; set; } 
-        [MaxLength (25)]
-        public string State { get; set; }
-        [MaxLength (20)]
-        public string ZipCode { get; set; }
+        
         [MaxLength (50)]
         public string Email { get; set; }
         [MaxLength (30)]

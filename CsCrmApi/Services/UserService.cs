@@ -4,10 +4,10 @@ using CsCrmApi.Context;
 using CsCrmApi.Entities;
 namespace CsCrmApi.Services
 {
-    public class DatabaseService
+    public class UserService
     {
         public readonly CsCrmDbContext _context;
-        public DatabaseService (CsCrmDbContext context) 
+        public UserService (CsCrmDbContext context) 
         {
 			_context = context;
 		}
@@ -38,7 +38,7 @@ namespace CsCrmApi.Services
 			_context.SaveChanges ();
 		}
         public void RemoveUser (int userId) 
-                {
+        {
 			var userToRemove = _context.Users.Find (userId);
 			userToRemove.IsDeleted = true;
 			_context.Users.Update (userToRemove);
