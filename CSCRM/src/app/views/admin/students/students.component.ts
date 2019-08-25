@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-students',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class StudentsComponent implements OnInit {
     public students: any = [];
 
-    constructor() {
+    constructor(private builder: FormBuilder) {
         this.students =
         [
             {
@@ -123,7 +124,21 @@ export class StudentsComponent implements OnInit {
         ];
     }
 
+    studentForm: FormGroup;
     ngOnInit() {
+        this.studentForm = this.builder.group({
+            FirstName: ['', Validators.required],
+            MiddleName: [''],
+            LastName: ['', Validators.required],
+            BirthDate: [null, Validators.required],
+            SchoolYear: ['', Validators.required],
+            Status: ['', Validators.required],
+            Address: ['', Validators.required],
+            City: ['', Validators.required],
+            State: ['', Validators.required],
+            Email: ['', Validators.required],
+            Phone: ['', Validators.required],
+            password: ['', Validators.required],
+          });
     }
-
 }

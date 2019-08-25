@@ -13,6 +13,8 @@ import { EventsComponent } from './views/admin/events/events.component';
 import { AcademyComponent } from './views/admin/academy/academy.component';
 import { StudentInfoComponent } from './views/student/student-info/student-info.component';
 import { InstructorInfoComponent } from './views/student/instructor-info/instructor-info.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { InstructorInfoComponent } from './views/student/instructor-info/instruc
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
