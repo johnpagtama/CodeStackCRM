@@ -1,35 +1,127 @@
-<mat-grid-list cols="1" rowHeight="2:1">
-    <mat-grid-tile>
-        <mat-card class="tp-card">
-            <mat-card-title>Login</mat-card-title>
-            <mat-card-content>
-                <form>
-                    <table>
-                        <tr>
-                            <td>
-                                <mat-form-field>
-                                    <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail"
-                                        required>
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <mat-form-field>
-                                    <input matInput placeholder="Password" [(ngModel)]="password" name="password"
-                                        required>
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                    </table>
+<!-- <mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-card class="tp-card">
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <form>
+          <table>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
 
-                </form>
-                <mat-card-actions layout="row" layout-align="end center">
-                    <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
-                    <button mat-raised-button (click)="login()" color="primary">Login</button>
-                </mat-card-actions>
-            </mat-card-content>
+        </form>
+        <mat-card-actions layout="row" layout-align="end center">
+          <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+          <button mat-raised-button (click)="login()" color="primary">Login</button>
+        </mat-card-actions>
+      </mat-card-content>
 
-        </mat-card>
-    </mat-grid-tile>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<mat-grid-list cols="1" rowHeight="500px">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <div>
+        <mat-card-content>
+          <form fxLayout="row" fxLayoutAlign="center">
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+          </form>
+          <mat-card-actions layout="row" layout-align="end center">
+            <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+            <button mat-raised-button (click)="login()" color="primary">Login</button>
+          </mat-card-actions>
+        </mat-card-content>
+      </div>
+      <!-- <mat-card-content>
+                      <form>
+                        <table>
+                          <tr>
+                            <td>
+                              <mat-form-field>
+                                <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <mat-form-field>
+                                <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                        </table>
+              
+                      </form>
+                      <mat-card-actions layout="row" layout-align="end center">
+                        <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+                        <button mat-raised-button (click)="login()" color="primary">Login</button>
+                      </mat-card-actions>
+                    </mat-card-content> -->
+
+    </mat-card>
+  </mat-grid-tile>
+
 </mat-grid-list>
+
+<!-- <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="space-around center" >
+  <div fxFlex="80%">
+    <mat-card class="tp-card">
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+          <form>
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </form>
+          <mat-card-actions layout="row" layout-align="end center">
+            <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+            <button mat-raised-button (click)="login()" color="primary">Login</button>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div> -->
