@@ -1,0 +1,45 @@
+.container-fluid {
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: center; 
+}
+
+.bg[_ngcontent] {
+    
+        height: 100%; 
+        background-color:  #1B74CC;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    
+}
+.small{
+    padding-top: 1rem;
+}
+.img {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding-top: 5rem;
+}
+.login {
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+.buttonBorder {
+    border: 1px solid white;
+    color: white;
+}
+.buttonBorder1{
+    border: 1px solid  #1B74CC;
+    color: white;
+
+    
+}
+.login-heading{
+    color: white;
+
+}
