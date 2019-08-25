@@ -1,6 +1,6 @@
 <mat-grid-list cols="1" rowHeight="2:1">
     <mat-grid-tile>
-        <mat-card>
+        <mat-card class="tp-card">
             <mat-card-title>Login</mat-card-title>
             <mat-card-content>
                 <form>
@@ -22,13 +22,14 @@
                             </td>
                         </tr>
                     </table>
-                    <mat-spinner></mat-spinner>
+
                 </form>
+                <mat-card-actions layout="row" layout-align="end center">
+                    <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+                    <button mat-raised-button (click)="login()" color="primary">Login</button>
+                </mat-card-actions>
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
-                <button mat-raised-button (click)="login()" color="primary">Login</button>
-            </mat-card-actions>
+
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
