@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SidenavComponent } from './views/shared/sidenav/sidenav.component';
 import { LoginComponent } from './views/shared/login/login.component';
@@ -47,7 +48,8 @@ import { EventInfoComponent } from './views/admin/event-info/event-info.componen
     FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
