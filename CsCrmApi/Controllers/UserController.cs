@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CsCrmApi.Entities;
 using CsCrmApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -12,35 +10,49 @@ namespace CsCrmApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private UserService userDb;
+        private  readonly UserService _userService;
 
-        public UserController(UserService _userDb)
+        public UserController(UserService userService)
         {
-            userDb = _userDb;
+            _userService = userService;
         }
 
         [HttpGet]
         public ActionResult<List<User>> GetUserList()
         {
-            return userDb.GetUserList().ToList();
+            return _userService.GetUserList().ToList();
+        }
+
+        [HttpGet ("{id}")]
+		public ActionResult<User> GetUserById (int id) 
+        {
+			return _userService.GetUserById (id);
+		}
+
+        [HttpPost]
+        public ActionResult<User> AddUser([FromBody] User user) 
+        {
+            return _userService.SaveUser(user);
         }
 
         [HttpPut]
         public ActionResult<User> UpdateUser([FromBody] User user)
         {
-            return userDb.UpdateUser(user);
+            return _userService.UpdateUser(user);
         }
 
-        [HttpPatch]
+        // PATCH api/user/removeuser/1
+        [HttpPatch("{id}")]
         public ActionResult<string> RemoveUser([FromQuery] int id)
         {
-            return userDb.RemoveUser(id);
+            return _userService.RemoveUser(id);
         }
 
-        [HttpDelete]
+        // DELETE api/user/deleteuser/1
+        [HttpDelete("{id}")]
         public ActionResult<string> DeleteUser([FromQuery] int id)
         {
-            return userDb.DeleteUser(id);
+            return _userService.DeleteUser(id);
         }
     }
 }

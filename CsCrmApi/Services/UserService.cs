@@ -7,15 +7,15 @@ namespace CsCrmApi.Services
     public class UserService
     {
         public readonly CsCrmDbContext _context;
-        /* public UserService(CsCrmDbContext context)
+        public UserService(CsCrmDbContext context)
         {
             _context = context;
-        } */
+        }
         public IEnumerable<User> GetUserList()
         {
             return _context.Users.ToList();
         }
-        /* public User GetUserById(int userId)
+        public User GetUserById(int userId)
         {
             return _context.Users.FirstOrDefault(u => u.UserId == userId);
         }
@@ -31,7 +31,7 @@ namespace CsCrmApi.Services
             }
             _context.SaveChanges();
             return user;
-        } */
+        }
         public User UpdateUser (User user)
         {
             _context.Users.Update(user);
