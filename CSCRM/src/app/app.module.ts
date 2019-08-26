@@ -23,6 +23,7 @@ import { StudentInfoComponent } from './views/student/student-info/student-info.
 import { InstructorInfoComponent } from './views/student/instructor-info/instructor-info.component';
 import { AddEventModalComponent } from './views/shared/add-event-modal/add-event-modal.component';
 import { EventInfoComponent } from './views/admin/event-info/event-info.component';
+import { ResetPasswordModalComponent } from './views/shared/reset-password-modal/reset-password-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EventInfoComponent } from './views/admin/event-info/event-info.componen
     StudentInfoComponent,
     InstructorInfoComponent,
     AddEventModalComponent,
-    EventInfoComponent
+    EventInfoComponent,
+    ResetPasswordModalComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,9 @@ import { EventInfoComponent } from './views/admin/event-info/event-info.componen
     FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ResetPasswordModalComponent
+  ]
 })
 export class AppModule {}
