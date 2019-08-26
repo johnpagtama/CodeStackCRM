@@ -15,7 +15,7 @@ export class UserService {
     this.userID
   );
   constructor(private dataService: DataService) {
-    this.action = 'List';
+    this.action = 'ListUser';
     this.userID = null;
   }
   public setAction(action: string, userID: number) {
@@ -28,14 +28,14 @@ export class UserService {
   public getListUser() {
     return this.dataService.get('User/ListUser').toPromise();
   }
-  public deleteUserID(id: number) {
+  public deleteUser(id: number) {
     const userID = 'User/DeleteUser/' + id;
     return this.dataService.delete(userID).toPromise();
   }
   public updateUser(user: any) {
     return this.dataService.patch('User/UpdateUser', user).toPromise();
   }
-  public softDeleteUserID(id: number) {
+  public softDeleteUser(id: number) {
     const userID = 'User/RemoveUser/' + id;
     return this.dataService.softDelete(userID).toPromise();
   }

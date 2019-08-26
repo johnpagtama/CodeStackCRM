@@ -15,7 +15,7 @@ export class EventService {
     this.eventID
   );
   constructor(private dataService: DataService) {
-    this.action = 'List';
+    this.action = 'ListEvent';
     this.eventID = null;
   }
   public setAction(action: string, eventID: number) {

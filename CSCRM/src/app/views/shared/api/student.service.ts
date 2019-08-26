@@ -15,7 +15,7 @@ export class StudentService {
     this.studentID
   );
   constructor(private dataService: DataService) {
-    this.action = 'List';
+    this.action = 'ListStudent';
     this.studentID = null;
   }
   public setAction(action: string, studentID: number) {
@@ -28,14 +28,14 @@ export class StudentService {
   public getListStudent() {
     return this.dataService.get('Student/ListStudent').toPromise();
   }
-  public deleteStudentID(id: number) {
+  public deleteStudent(id: number) {
     const studentID = 'Student/DeleteStudent/' + id;
     return this.dataService.delete(studentID).toPromise();
   }
   public updateStudent(Student: any) {
     return this.dataService.patch('Student/UpdateStudent', Student).toPromise();
   }
-  public softDeleteStudentID(id: number) {
+  public softDeleteStudent(id: number) {
     const studentID = 'Student/RemoveStudent/' + id;
     return this.dataService.softDelete(studentID).toPromise();
   }
