@@ -11,25 +11,32 @@ export class UserService {
   public actionValue: BehaviorSubject<string> = new BehaviorSubject<string>(
     this.action
   );
-  public actionuserIDValue: BehaviorSubject<number> = new BehaviorSubject<
-    number
-  >(this.userID);
+  public actionUserIDValue: BehaviorSubject<number> = new BehaviorSubject<number>(
+    this.userID
+  );
   constructor(private dataService: DataService) {
     this.action = 'List';
     this.userID = null;
   }
   public setAction(action: string, userID: number) {
     this.actionValue.next(action);
-    this.actionuserIDValue.next(userID);
+    this.actionUserIDValue.next(userID);
   }
-  public insertUser(user: any) {
-    return this.dataService.post('user/Insert', user).toPromise();
+  public addUser(user: any) {
+    return this.dataService.post('User/AddUser', user).toPromise();
   }
-  public getList() {
-    return this.dataService.get('User/List').toPromise();
+  public getListUser() {
+    return this.dataService.get('User/ListUser').toPromise();
   }
-  public deleteuserID(id: number) {
-    const userID = 'User/Delete/' + id;
+  public deleteUserID(id: number) {
+    const userID = 'User/DeleteUser/' + id;
     return this.dataService.delete(userID).toPromise();
+  }
+  public updateUser(user: any) {
+    return this.dataService.patch('User/UpdateUser', user).toPromise();
+  }
+  public softDeleteUserID(id: number) {
+    const userID = 'User/RemoveUser/' + id;
+    return this.dataService.softDelete(userID).toPromise();
   }
 }

@@ -38,6 +38,15 @@ export class DataService {
     );
   }
 
+  public softDelete(key: string): Observable<any> {
+    return this.http.post(this.url + key, httpOptions).pipe(
+      map(res => (this.data = res)),
+      tap((res: any) => this.handleSuccess(res, null)),
+      catchError(err => this.handleError(err))
+    );
+  }
+
+
   public post(route: string, item: any, optionalMsg?: string): any {
     return this.http.post(this.url + route, item, httpOptions).pipe(
       map(res => (this.data = res)),
@@ -48,6 +57,14 @@ export class DataService {
 
   public patch(route: string, item: any, optionalMsg?: string) {
     return this.http.patch(this.url + route, item).pipe(
+      map(res => (this.data = res)),
+      tap((res: any) => this.handleSuccess(res, optionalMsg)),
+      catchError(err => this.handleError(err))
+    );
+  }
+
+  public put(route: string, item: any, optionalMsg?: string): any {
+    return this.http.put(this.url + route, item, httpOptions).pipe(
       map(res => (this.data = res)),
       tap((res: any) => this.handleSuccess(res, optionalMsg)),
       catchError(err => this.handleError(err))

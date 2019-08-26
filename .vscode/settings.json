@@ -1,6 +1,12 @@
 {
     "cSpell.words": [
+        "Liststudent",
+        "Removestudent",
+        "actionstudent",
         "actionuser",
-        "deleteuser"
+        "addstudent",
+        "deletestudent",
+        "deleteuser",
+        "updatestudent"
     ]
 }
