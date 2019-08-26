@@ -7,7 +7,7 @@
 </div> -->
 <mat-sidenav-container>
   <mat-nav-list *ngFor="let a of adminPages">
-      <a mat-list-item href="#">
+      <a mat-list-item>
         <p class="pointer text-left pl-3" routerLink="{{a.routerLink}}" routerLinkActive="{{a.routerLinkActive}}">
           <fa-icon [icon]="a.linkIcon"></fa-icon> {{a.linkText}}
         </p>
