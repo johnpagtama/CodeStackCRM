@@ -38,7 +38,7 @@
       <mat-card-title>Login</mat-card-title>
       <div>
         <mat-card-content>
-          <form fxLayout="row" fxLayoutAlign="center">
+          <form fxLayout="row" fxLayoutAlign="center"  (ngSubmit)="login()">
             <table>
               <tr>
                 <td>
@@ -55,7 +55,6 @@
                 </td>
               </tr>
             </table>
-
           </form>
           <mat-card-actions layout="row" layout-align="end center">
             <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>

@@ -21,7 +21,7 @@ const routes: Routes =
     { path: 'studentInfo', component: StudentInfoComponent },
     { path: 'instructorInfo', component: InstructorInfoComponent },
     { path: 'login', component: LoginComponent },
-    { path: '', component: LoginComponent, pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', component: LoginComponent }
 ];
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,20 +10,25 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loginEmail: string;
-  password: string;
+  get loginEmail() {return this.loginForm.get('email'); }
+  get password() {return this.loginForm.get('password'); }
 
 
-  constructor( private builder: FormBuilder ) { }
+  constructor( private builder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
+    this.loginForm = this.builder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
+
   login() {
-    if (this.loginEmail === 'admin' && this.password === 'admin') {
-      // this.router.navigate(["user"]);
-     } else {
-       alert('Invalid credentials');
+    if (this.loginForm.invalid || this.loginForm.pristine) {
+      alert('Invalid credentials');
+    } else {
+      this.router.navigate(['./users']);
      }
   }
 

@@ -1,0 +1,13 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.invalid {
+    font-weight: bold;
+    color: rgb(120, 4, 0);
+}
+
+.my-container {
+    padding: 7.5px;
+}

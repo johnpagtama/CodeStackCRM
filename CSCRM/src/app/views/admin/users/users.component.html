@@ -1,1 +1,34 @@
-<p>users works!</p>
+<!-- FORMS FOR LATER -->
+<div class="my-container">
+    <form [formGroup]="userForm" (ngSubmit)="addUser()">
+        <mat-form-field>
+            <input type="text" formControlName="firstName" id="firstName" name="firstName" matInput placeholder="First Name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea  type="text" formControlName="middleName" id="middleName" name="middleName"  matInput placeholder="Middle Name"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea  type="text" formControlName="lastName" id="lastName" name="lastName"  matInput placeholder="Middle Name" matInput placeholder="Last Name"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea type="text" formControlName="email" id="email" name="email"  matInput placeholder="Email"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea type="text" formControlName="phone" id="phone" name="phone" matInput placeholder="Phone Number"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="role" id="role" name="role"  placeholder="Select A Role">
+                <mat-option value="option">Admin</mat-option>
+                <mat-option value="option">Moderator</mat-option>
+                <mat-option value="option">Read-Only</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="addUser()" color="contrast">Add User</button>
+    </form>
+</div>
