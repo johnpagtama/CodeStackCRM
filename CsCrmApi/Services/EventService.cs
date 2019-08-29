@@ -7,10 +7,10 @@ namespace CsCrmApi.Services
     public class EventService
     {
         public readonly CsCrmDbContext _context;
-        /* public EventService(CsCrmDbContext context)
+        public EventService(CsCrmDbContext context)
         {
             _context = context;
-        } */
+        }
         public IEnumerable<Event> GetEventList()
         {
             return _context.Events.ToList();
@@ -32,14 +32,12 @@ namespace CsCrmApi.Services
             _context.SaveChanges();
             return Event;
         }
-
         public Event UpdateEvent(Event selectedEvent)
         {
             _context.Events.Update(selectedEvent);
             _context.SaveChanges();
             return selectedEvent;
         }
-
         public string DeleteEvent(int EventId)
         {
             var EventToDelete = _context.Events.Find(EventId);

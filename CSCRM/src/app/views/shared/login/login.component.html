@@ -3,6 +3,7 @@
   <mat-grid-tile>
     <mat-card>
       <mat-card-title>Login</mat-card-title>
+<<<<<<< HEAD
 
         <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="row" fxLayoutAlign="center">
             <mat-card-content>
@@ -31,3 +32,24 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+=======
+      <div>
+        <mat-card-content>
+          <form fxLayout="row" fxLayoutAlign="center"  (ngSubmit)="login()">
+                  <mat-form-field>
+                    <input matInput placeholder="Email" [(ngModel)]="loginEmail" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Password" [(ngModel)]="password" required>
+                  </mat-form-field>
+          </form>
+          <mat-card-actions layout="row" layout-align="end center">
+            <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+            <button mat-raised-button (click)="login()" color="primary">Login</button>
+          </mat-card-actions>
+        </mat-card-content>
+      </div>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+>>>>>>> 0762982c4af1476fc2dd8bfea369842816db619f

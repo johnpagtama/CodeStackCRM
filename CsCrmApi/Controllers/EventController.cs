@@ -1,45 +1,58 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CsCrmApi.Entities;
 using CsCrmApi.Services;
 using Microsoft.AspNetCore.Mvc;
+
 namespace CsCrmApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class EventController
+    public class EventController : ControllerBase
     {
-        private EventService eventDb;
+        private readonly EventService _eventService;
 
-        public EventController(EventService _eventDb)
+        public EventController(EventService eventService)
         {
-            eventDb = _eventDb;
+            _eventService = eventService;
         }
 
         [HttpGet]
         public ActionResult<List<Event>> GetEventList()
         {
-            return eventDb.GetEventList().ToList();
+            return _eventService.GetEventList().ToList();
+        }
+
+        [HttpGet ("{id}")]
+		public ActionResult<Event> GetEventById (int id) 
+        {
+			return _eventService.GetEventById (id);
+		}
+        
+        [HttpPost]
+        public ActionResult<Event> AddEvent([FromBody] Event selectedEvent) 
+        {
+            return _eventService.SaveEvent(selectedEvent);
         }
 
         [HttpPut]
         public ActionResult<Event> UpdateEvent([FromBody] Event selectedEvent)
         {
-            return eventDb.UpdateEvent(selectedEvent);
+            return _eventService.UpdateEvent(selectedEvent);
         }
 
-        [HttpPatch]
+        // PATCH api/user/removeevent/1
+        [HttpPatch("{id}")]
         public ActionResult<string> RemoveEvent([FromQuery] int id)
         {
-            return eventDb.RemoveEvent(id);
+            return _eventService.RemoveEvent(id);
         }
 
-        [HttpDelete]
+        // DELETE api/user/deleteevent/1
+        [HttpDelete("{id}")]
         public ActionResult<string> DeleteEvent([FromQuery] int id)
         {
-            return eventDb.DeleteEvent(id);
+            return _eventService.DeleteEvent(id);
         }
     }
 }

@@ -7,15 +7,15 @@ namespace CsCrmApi.Services
     public class StudentService
     {
         public readonly CsCrmDbContext _context;
-        /* public StudentService(CsCrmDbContext context)
+        public StudentService(CsCrmDbContext context)
         {
             _context = context;
-        } */
+        }
         public IEnumerable<Student> GetStudentList()
         {
             return _context.Students.ToList();
         }
-        /* public Student GetStudentById(int studentId)
+        public Student GetStudentById(int studentId)
         {
             return _context.Students.FirstOrDefault(u => u.StudentId == studentId);
         }
@@ -31,7 +31,7 @@ namespace CsCrmApi.Services
             }
             _context.SaveChanges();
             return student;
-        } */
+        }
         public Student UpdateStudent(Student student)
         {
             _context.Students.Update(student);

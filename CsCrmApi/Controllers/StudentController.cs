@@ -1,45 +1,58 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CsCrmApi.Entities;
 using CsCrmApi.Services;
 using Microsoft.AspNetCore.Mvc;
+
 namespace CsCrmApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class StudentController
+    public class StudentController : ControllerBase
     {
-        private StudentService studentDb;
-
-        public StudentController(StudentService _studentDb)
+        private  readonly StudentService _studentService;
+        
+        public StudentController(StudentService studentService)
         {
-            studentDb = _studentDb;
+            _studentService = studentService;
         }
 
         [HttpGet]
         public ActionResult<List<Student>> GetStudentList()
         {
-            return studentDb.GetStudentList().ToList();
+            return _studentService.GetStudentList().ToList();
+        }
+
+        [HttpGet ("{id}")]
+		public ActionResult<Student> GetStudentById (int id) 
+        {
+			return _studentService.GetStudentById (id);
+		}
+
+        [HttpPost]
+        public ActionResult<Student> AddUser([FromBody] Student student) 
+        {
+            return _studentService.SaveStudent(student);
         }
 
         [HttpPut]
         public ActionResult<Student> UpdateStudent([FromBody] Student student)
         {
-            return studentDb.UpdateStudent(student);
+            return _studentService.UpdateStudent(student);
         }
 
-        [HttpPatch]
+        // PATCH api/user/removestudent/1
+        [HttpPatch("{id}")]
         public ActionResult<string> RemoveStudent([FromQuery] int id)
         {
-            return studentDb.RemoveStudent(id);
+            return _studentService.RemoveStudent(id);
         }
 
-        [HttpDelete]
+        // DELETE api/user/deletestudent/1
+        [HttpDelete("{id}")]
         public ActionResult<string> DeleteStudent([FromQuery] int id)
         {
-            return studentDb.DeleteStudent(id);
+            return _studentService.DeleteStudent(id);
         }
     }
 }
