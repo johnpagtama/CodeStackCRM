@@ -27,7 +27,6 @@ import { EventInfoComponent } from './views/admin/event-info/event-info.componen
 import { AuthGuardService } from './guards/auth-guard.service';
 =======
 import { ResetPasswordModalComponent } from './views/shared/reset-password-modal/reset-password-modal.component';
->>>>>>> 0762982c4af1476fc2dd8bfea369842816db619f
 
 @NgModule({
   declarations: [
@@ -59,13 +58,9 @@ import { ResetPasswordModalComponent } from './views/shared/reset-password-modal
   ],
 <<<<<<< HEAD
   providers: [AuthGuardService],
-  bootstrap: [AppComponent]
-=======
-  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
     ResetPasswordModalComponent
   ]
->>>>>>> 0762982c4af1476fc2dd8bfea369842816db619f
 })
 export class AppModule {}
