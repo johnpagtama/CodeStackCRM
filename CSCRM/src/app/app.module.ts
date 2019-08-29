@@ -23,6 +23,7 @@ import { StudentInfoComponent } from './views/student/student-info/student-info.
 import { InstructorInfoComponent } from './views/student/instructor-info/instructor-info.component';
 import { AddEventModalComponent } from './views/shared/add-event-modal/add-event-modal.component';
 import { EventInfoComponent } from './views/admin/event-info/event-info.component';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { EventInfoComponent } from './views/admin/event-info/event-info.componen
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,126 +1,33 @@
-<!-- <mat-grid-list cols="1" rowHeight="2:1">
-  <mat-grid-tile>
-    <mat-card class="tp-card">
-      <mat-card-title>Login</mat-card-title>
-      <mat-card-content>
-        <form>
-          <table>
-            <tr>
-              <td>
-                <mat-form-field>
-                  <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <mat-form-field>
-                  <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
-                </mat-form-field>
-              </td>
-            </tr>
-          </table>
-
-        </form>
-        <mat-card-actions layout="row" layout-align="end center">
-          <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
-          <button mat-raised-button (click)="login()" color="primary">Login</button>
-        </mat-card-actions>
-      </mat-card-content>
-
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list> -->
-
+<img alt="logo" src="../../../../assets/img/logo.png" class="img" style="width:10%;">
 <mat-grid-list cols="1" rowHeight="500px">
   <mat-grid-tile>
     <mat-card>
       <mat-card-title>Login</mat-card-title>
-      <div>
-        <mat-card-content>
-          <form fxLayout="row" fxLayoutAlign="center"  (ngSubmit)="login()">
-            <table>
-              <tr>
-                <td>
-                  <mat-form-field>
-                    <input matInput placeholder="Email" [(ngModel)]="loginEmail" required>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field>
-                    <input matInput placeholder="Password" [(ngModel)]="password" required>
-                  </mat-form-field>
-                </td>
-              </tr>
-            </table>
-          </form>
-          <mat-card-actions layout="row" layout-align="end center">
-            <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
-            <button mat-raised-button (click)="login()" color="primary">Login</button>
-          </mat-card-actions>
-        </mat-card-content>
-      </div>
-      <!-- <mat-card-content>
-                      <form>
-                        <table>
-                          <tr>
-                            <td>
-                              <mat-form-field>
-                                <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
-                              </mat-form-field>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <mat-form-field>
-                                <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
-                              </mat-form-field>
-                            </td>
-                          </tr>
-                        </table>
-              
-                      </form>
-                      <mat-card-actions layout="row" layout-align="end center">
-                        <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
-                        <button mat-raised-button (click)="login()" color="primary">Login</button>
-                      </mat-card-actions>
-                    </mat-card-content> -->
 
-    </mat-card>
-  </mat-grid-tile>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="row" fxLayoutAlign="center">
+            <mat-card-content>
+                
+                <div>
+                    <mat-form-field>
+                        <input matInput formControlName="email" name="email" type="text" placeholder="Email">
+                    </mat-form-field>
+                </div>
 
+                <div>
+                    <mat-form-field>
+                        <input matInput formControlName="password" name="password" type="password" placeholder="Password">
+                    </mat-form-field>
+                </div>
+                
+
+                <mat-card-actions layout="row" layout-align="end center">
+                    <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
+                    <button mat-raised-button (click)="login()" color="primary">Login</button>
+                </mat-card-actions>
+            
+            </mat-card-content>
+        </form>
+        
+        </mat-card>
+    </mat-grid-tile>
 </mat-grid-list>
-
-<!-- <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="space-around center" >
-  <div fxFlex="80%">
-    <mat-card class="tp-card">
-        <mat-card-title>Login</mat-card-title>
-        <mat-card-content>
-          <form>
-            <table>
-              <tr>
-                <td>
-                  <mat-form-field>
-                    <input matInput placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field>
-                    <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
-                  </mat-form-field>
-                </td>
-              </tr>
-            </table>
-          </form>
-          <mat-card-actions layout="row" layout-align="end center">
-            <button mat-raised-button (click)="resetPassword()" color="primary">Reset</button>
-            <button mat-raised-button (click)="login()" color="primary">Login</button>
-          </mat-card-actions>
-        </mat-card-content>
-      </mat-card>
-  </div>
-</div> -->

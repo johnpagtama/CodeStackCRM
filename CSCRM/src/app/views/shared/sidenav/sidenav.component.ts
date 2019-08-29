@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
@@ -58,12 +57,6 @@ export class SidenavComponent implements OnInit {
             routerLinkActive: 'activeLink',
             linkText: 'Academy',
             linkIcon: this.faUniversity
-        },
-
-        {
-            routerLink: 'login',
-            linkText: 'Logout',
-            linkIcon: this.faSignOutAlt
         }
     ];
 
@@ -89,12 +82,20 @@ export class SidenavComponent implements OnInit {
         }
     ];
 
-    constructor(private route: ActivatedRoute) { }
+    public logOut = {
+        routerLink: 'login',
+        linkText: 'Logout',
+        linkIcon: this.faSignOutAlt
+    };
+
+    constructor() { }
 
     ngOnInit() {
-        console.log(this.route);
-        // tslint:disable-next-line: no-string-literal
-        console.log(this.route['_routerState'].snapshot.url);
+
+    }
+
+    logout() {
+        localStorage.removeItem('token');
     }
 
 }

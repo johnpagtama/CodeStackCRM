@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { empty } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -10,30 +11,47 @@ import { empty } from 'rxjs';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  get loginEmail() {return this.loginForm.get('email'); }
-  get password() {return this.loginForm.get('password'); }
+    loginForm: FormGroup;
+    userLoggedIn: boolean;
+
+    constructor( private builder: FormBuilder, private http: HttpClient, private router: Router) { }
+
+    ngOnInit() {
+        this.loginForm = this.builder.group({
+        email: ['', Validators.required],
+        password: ['', Validators.required]
+        });
+    }
 
 
-  constructor( private builder: FormBuilder, private router: Router) { }
+    async login() {
+        console.log(this.loginForm.value);
 
-  ngOnInit() {
-    this.loginForm = this.builder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-  }
+        const loginURL = 'https://localhost:44321/api/auth/login';
 
+        const result: any = await this.http.post
+        (
+            loginURL, this.loginForm.value,
+            {
+                headers: new HttpHeaders
+                ({
+                    'Content-Type': 'application/json'
+                })
+            }
+        ).toPromise();
 
-  login() {
-    if (this.loginForm.invalid || this.loginForm.pristine) {
-      alert('Invalid credentials');
-    } else {
-      this.router.navigate(['./users']);
-     }
-  }
+        console.log(result.token);
 
-  resetPassword() {
-    alert('Reset Password');
-  }
+        localStorage.setItem('token', result.token);
+
+        this.userLoggedIn = true;
+
+        this.router.navigate(['dashboard']);
+
+        this.loginForm.reset();
+    }
+
+    resetPassword() {
+        alert('Reset Password');
+    }
 }

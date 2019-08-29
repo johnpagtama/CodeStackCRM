@@ -8,9 +8,18 @@
 <mat-sidenav-container>
   <mat-nav-list *ngFor="let a of adminPages">
       <a mat-list-item>
-        <p class="pointer text-left pl-3" routerLink="{{a.routerLink}}" routerLinkActive="{{a.routerLinkActive}}">
+        <div class="pointer text-left pl-3" routerLink="{{a.routerLink}}" routerLinkActive="{{a.routerLinkActive}}">
           <fa-icon [icon]="a.linkIcon"></fa-icon> {{a.linkText}}
-        </p>
+        </div>
       </a>
   </mat-nav-list>
+
+  <mat-nav-list>
+    <a mat-list-item>
+      <p class="pointer text-left pl-3" (click)="logout()" routerLink="{{logOut.routerLink}}" routerLinkActive="{{logOut.routerLinkActive}}">
+        <fa-icon [icon]="logOut.linkIcon"></fa-icon> Logout
+      </p>
+    </a>
+</mat-nav-list>
+
 </mat-sidenav-container>

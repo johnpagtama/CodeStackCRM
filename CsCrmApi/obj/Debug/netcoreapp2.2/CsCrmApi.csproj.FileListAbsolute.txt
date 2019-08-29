@@ -12,3 +12,17 @@
 /Users/cruzfr/Google Drive/005-Leve-4-/02-FinalProject/CodeStackCRM/CsCrmApi/obj/Debug/netcoreapp2.2/CsCrmApi.RazorTargetAssemblyInfo.cache
 /Users/cruzfr/Google Drive/005-Leve-4-/02-FinalProject/CodeStackCRM/CsCrmApi/obj/Debug/netcoreapp2.2/CsCrmApi.dll
 /Users/cruzfr/Google Drive/005-Leve-4-/02-FinalProject/CodeStackCRM/CsCrmApi/obj/Debug/netcoreapp2.2/CsCrmApi.pdb
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\bin\Debug\netcoreapp2.2\CsCrmApi.deps.json
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\bin\Debug\netcoreapp2.2\CsCrmApi.runtimeconfig.json
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\bin\Debug\netcoreapp2.2\CsCrmApi.runtimeconfig.dev.json
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\bin\Debug\netcoreapp2.2\CsCrmApi.dll
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\bin\Debug\netcoreapp2.2\CsCrmApi.pdb
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.csprojAssemblyReference.cache
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.csproj.CoreCompileInputs.cache
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.RazorAssemblyInfo.cache
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.RazorAssemblyInfo.cs
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.AssemblyInfoInputs.cache
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.AssemblyInfo.cs
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.RazorTargetAssemblyInfo.cache
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.dll
+C:\Users\pagta\Documents\MatCSCRM\CodeStackCRM\CsCrmApi\obj\Debug\netcoreapp2.2\CsCrmApi.pdb
